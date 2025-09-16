@@ -1,0 +1,100 @@
+{% extends 'base.html' %} {% load static %}
+
+{% block hero_bg %}{% static "images/img15.jpeg" %}{% endblock hero_bg %}
+{% block hero_title %}Contact Us{% endblock hero_title %}
+{% block hero_subtitle %}We’re here to help. Reach out to us for bookings, queries, or special requests.{% endblock hero_subtitle %}
+
+{% block hero_btn_text %}Book a Room{% endblock hero_btn_text %}
+
+{% block content %}
+
+<section class="my-5 p-3 border-0">
+  <div class="row">
+    <div class="col-md-6 mt-3 d-flex align-items-center">
+      <form
+        id="contact-form"
+        action=""
+        class="bg-white rounded-3 border-0 py-4 p-3 w-75 card card-bg"
+      >
+        <h1 class="fonts mb-4">Contact Us</h1>
+
+        <div class="mb-2">
+          <label for="" class="label-form">Name</label>
+          <input type="text" id="name" name="name" class="form-control" />
+        </div>
+        <div class="mb-2">
+          <label for="" class="label-form">Mobile</label>
+          <input type="text" id="mobile" name="mobile" class="form-control" />
+        </div>
+        <div class="mb-2">
+          <label for="" class="label-form">Date</label>
+          <input type="date" id="date" name="date" class="form-control" />
+        </div>
+        <div class="mb-2">
+          <label for="" class="label-form">Message</label>
+          <input type="text" id="message" name="message" class="form-control" />
+        </div>
+        <button
+          href=""
+          type="submit"
+          id="submitBtn"
+          class="btn btn-primary mt-4 mb-2"
+          >Submit</button
+        >
+      </form>
+    </div>
+
+    <div class="col-md-6 mt-3">
+      <h2>Hotel NayanDeep</h2>
+      <small>“Stay memorable, stay at Hotel Nayandeep.”</small>
+      <p class="mt-3">
+        At Hotel Nayandeep, we believe that great hospitality begins with warm
+        communication. Whether you are planning your next holiday, a business
+        trip, or a family event, our team is always here to guide you with the
+        right information and assistance. We understand that every guest has
+        unique needs, and we strive to provide quick, clear, and friendly
+        support at every step — from inquiries about room availability and
+        dining options to event bookings and special arrangements. Getting in
+        touch with us is simple and convenient. You can call us directly for
+        instant assistance, drop us an email for detailed queries, or simply
+        fill out the contact form on our website — our team ensures a prompt
+        response every time. We also welcome walk-in guests who would like to
+        experience our warm hospitality firsthand.
+      </p>
+      <p>
+        At Hotel Nayandeep, your comfort, satisfaction, and peace of mind are
+        our top priorities. No matter the question or request, we are just a
+        message away, ready to make your experience with us smooth, enjoyable,
+        and memorable.
+      </p>
+      <a href="{% url 'home' %}" class="btn bg-blue text-light py-2 px-5 mt-3"
+        >Back To Home</a
+      >
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const mobile = document.getElementById("mobile").value;
+    const date = document.getElementById("date").value;
+    const message = document.getElementById("message").value;
+
+    window.open(
+      `https://wa.me/79919994599?text=Name:%20${encodeURIComponent(
+        name
+      )}%0AMobile:%20${encodeURIComponent(
+        mobile
+      )}%0ADate:%20${encodeURIComponent(
+        date
+      )}%0AMessage:%20${encodeURIComponent(message)}`,
+      "_blank"
+    );
+  });
+</script>
+{% endblock content %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+
+
+
+
+{% block hero_bg %}{% static "images/img9.jpg" %}{% endblock hero_bg %}
+{% block hero_title %}Fine Dining Experience{% endblock hero_title %}
+{% block hero_subtitle %}Choose the best stay for your comfort{% endblock hero_subtitle %}
+{% block hero_btn_url %}{% url "room" %}{% endblock hero_btn_url %}
+{% block hero_btn_text %}Book a Room{% endblock hero_btn_text %}
+
+
+
+
+
+{% block content %}
+<div class="container-fluid">
+  <div class="container">
+     <div class="dining d-flex flex-column align-items-center my-4">
+            <h2 class="">Our Dining </h2>
+     <small class="">we are the Nayandeep HOTEL , 4-star hotel in Gorakhpur</small>
+     <img src="{% static 'images\dining.png' %}" width="5%" alt="">
+     </div>
+
+     <div class="row mt-5">
+         
+         <div class="col-md-7 shadow-lg p-2 mb-5 bg-body rounded card">
+             
+             <img src="{% static 'images\img-eat.jpeg' %}" class="" alt="" width="100%" height="400px" />
+        </div>
+        <div class="col-md-5 ps-3">
+            <h3 class="mb-3 mt-3">Dine in Style at Nayandeep Hotel</h3>
+            <p>Experience culinary excellence at Nayandeep Hotel's dining venues. From gourmet restaurants to cozy cafes, indulge in a variety of cuisines crafted by our expert chefs. Enjoy elegant settings, impeccable service, and a memorable dining experience that complements your stay with us.</p>
+            <p>
+                Whether you're craving international flavors or local delicacies, our diverse menu options cater to every palate. Join us for breakfast, lunch, or dinner and savor the finest dishes in a sophisticated ambiance.
+
+                
+            </p>
+            <a href="{% url 'home' %}" class="btn bg-blue text-light px-4 py-2 mt-3">Explore Dining Options</a>
+        </div>
+    </div>
+  </div>
+  {% endblock content %}
+</div>

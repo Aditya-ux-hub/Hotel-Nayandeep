@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block hero_bg %}{% static "images/img10.jpg" %}{% endblock hero_bg %}
+{% block hero_title %}Our Luxury Rooms{% endblock hero_title %}
+{% block hero_subtitle %}Choose the best stay for your comfort{% endblock hero_subtitle %}
+{% block hero_btn_url %}{% url "room" %}{% endblock hero_btn_url %}
+{% block hero_btn_text %}Book a Room{% endblock hero_btn_text %}
+
+
+{% block content %}
+
+<!-- Swiper -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    {% for r in rooms %}
+      <!-- Slide -->
+      <div class="swiper-slide">
+        <div class="card shadow-sm mt-4 h-100">
+          <img src="{{r.photo.url}}" class="card-img-top" alt="room image" />
+
+          <div class="card-body d-flex flex-column">
+            <h2 class="fs-5">{{ r.Name }}</h2>
+            <p class="text-start">
+              {{ r.description }}
+            </p>
+            <p>
+              <i class="fa-solid fa-bed"></i> {{ r.room_num }} Bedrooms /
+              <i class="fa-solid fa-user"></i> {{ r.adults }} Adults
+              <i class="fa-solid fa-child"></i> {{ r.child }} Child
+            </p>
+            <a href="{% url 'roomsingle' r.id %}" class="btn bg-blue text-light mt-auto">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- End Slide -->
+    {% endfor %}
+  </div>
+
+  <!-- Pagination -->
+  <div class="swiper-pagination"></div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="{% static 'js/jquery.js' %}"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1, 
+    spaceBetween: 20,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      576: {  // tablet
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      992: {  // desktop
+        slidesPerView: 3,
+        spaceBetween: 30,
+      }
+    }
+  });
+</script>
+
+{% endblock content %}

@@ -1,0 +1,401 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section class="container-fluid">
+  <div
+    class="content d-flex flex-column justify-content-center align-items-center"
+  >
+    <img
+      src="{% static 'images/logo1.png' %}"
+      class="w-25"
+      height="300px"
+      alt=""
+    />
+
+    <small>we are the Nayandeep HOTEL , 4-star hotel in Gorakhpur</small>
+    <h2 class="text-black text-center fw-none">
+      Experience elevated luxary at the most glamorous oceanfront resort
+    </h2>
+    <p class="w-75 text-center mt-3">
+      Welcome to Hotel Nayandeep – a perfect blend of comfort, hospitality, and
+      affordability. Conveniently located for travelers and families alike,
+      Hotel Nayandeep offers a warm and homely atmosphere with modern facilities
+      to make your stay memorable. Whether you are visiting for business,
+      leisure, or family occasions, our dedicated staff ensures personalized
+      service and a hassle-free experience. At Hotel Nayandeep, we believe in
+      creating a peaceful retreat for our guests with well-furnished rooms,
+      delicious dining options, and all the essential amenities you need for a
+      relaxing stay.
+    </p>
+  </div>
+
+  <div class="cards">
+    <div class="row">
+      <div class="col-md-4 d-flex flex-column justify-content-center">
+        <div class="brd-1 p-4 mx-2 my-5 d-flex flex-column align-items-center">
+          <img
+            src="https://myskyhotel.in/wp-content/uploads/2023/07/door-1.svg"
+            width="100px"
+            alt=""
+          />
+          <h4 class="fs-5 fonts mt-3">Check-in and Check-out</h4>
+          <p class="text-center">
+            Flexible early check-in and check-out for guest convenience.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex flex-column justify-content-center">
+        <div class="brd-1 p-4 mx-2 my-5 d-flex flex-column align-items-center">
+          <img
+            src="https://myskyhotel.in/wp-content/uploads/2023/07/fi__hotel_bell.svg"
+            width="100px"
+            alt=""
+          />
+          <h4 class="fs-5 fonts mt-3">Culinary Delights</h4>
+          <p class="text-center">
+            Flexible early check-in and check-out for guest convenience.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex flex-column justify-content-center">
+        <div class="brd-1 p-4 mx-2 my-5 d-flex flex-column align-items-center">
+          <img
+            src="https://myskyhotel.in/wp-content/uploads/2023/07/Frame-123.svg"
+            width="100px"
+            alt=""
+          />
+          <h4 class="fs-5 fonts mt-3">Suite Dreams</h4>
+          <p class="text-center">
+            Flexible early check-in and check-out for guest convenience.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about my-5">
+  <div class="row my-5 py-5">
+    <div class="col-md-6 mt-3">
+      <div class="content">
+        <h2>About Us</h2>
+        <small class="mb-3"
+          >“Hotel Nayandeep – Comfort and elegance at one place.”
+        </small>
+        <p>
+          Hotel Nayandeep is more than just a place to stay; it is a destination
+          where comfort, hospitality, and convenience come together to create
+          unforgettable experiences. Nestled in a prime location, the hotel is
+          thoughtfully designed to cater to the needs of modern travelers while
+          retaining a warm and welcoming charm. From business executives and
+          families to tourists seeking relaxation, every guest at Hotel
+          Nayandeep is treated with personalized attention and care.
+        </p>
+        <p>
+          What truly sets Hotel Nayandeep apart is our commitment to service.
+          Our staff is dedicated to making your visit seamless and enjoyable,
+          ready to assist you at every step with warmth and professionalism. We
+          believe that hospitality is not just about providing a room, but about
+          creating an atmosphere where every guest feels valued, respected, and
+          cared for.
+        </p>
+
+        <a href="{% url 'about' %}" class="btn bg-blue py-3 text-light"
+          >Know More</a
+        >
+      </div>
+    </div>
+
+    <div class="col-md-6 mt-3">
+      <div class="card">
+        <img
+          src="{% static 'images/hotel.jpg' %}"
+          class="w-100 rounded-3"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="my-5">
+  <div class="content">
+    <div class="row bg-blue rounded-3 py-3 px-4">
+      <h2 class="text-center mb-5">Our Rooms</h2>
+      <div class="col-md-6">
+        <p class="text-light">
+          A legacy of luxury, a future of unforgettable experiences
+        </p>
+        <h3 class="fonts text-light">Select Your sanctuary</h3>
+      </div>
+      <div class="col-md-6 d-flex justify-content-end">
+        <p class="text-light">
+          Our Hotel offers Superior, Executive, Club Room, Junior Suite, Master
+          Suite
+        </p>
+      </div>
+    </div>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        {% for r in rooms %}
+        <!-- Rooms  -->
+        <div class="swiper-slide">
+          <div class="card shadow-sm mt-4 w-100">
+            <!-- <div class="img w-100 mb-4"> -->
+            <img src="{{r.photo.url}}" class="w-100" alt="" />
+            <!-- </div> -->
+            <div class="container my-4 d-flex flex-column align-items-start">
+              <h2 class="fs-3">{{r.Name}}</h2>
+              <p class="text-start">{{r.description}}</p>
+              <p>
+                <i class="fa-solid fa-bed"></i> {{r.room_num}} Bedrooms /
+                <i class="fa-solid fa-user"></i> {{r.adults}} Adults
+                <i class="fa-solid fa-child"></i> {{r.child}} Child
+              </p>
+              <a
+                href="{% url 'roomsingle' r.id %}"
+                class="btn bg-blue text-light"
+                >Book Now</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- end  -->
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<section class="amenties my-5 bg-white p-3 shadow-lg rounded-5">
+  <h2 class="mb-3">Amenities</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card border-0 p-4">
+        <div class="d-flex align-items-center gap-4">
+          <img
+            src="https://uxwing.com/wp-content/themes/uxwing/download/internet-network-technology/wifi-line-icon.svg"
+            width="50px"
+            alt=""
+          />
+          <h5>Free Wi-Fi</h5>
+        </div>
+        <p class="mt-3">
+          Seamless, high-speed Wi-Fi access, complimentary for all guests.
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card border-0 p-4">
+        <div class="d-flex align-items-center gap-4">
+          <img
+            src="https://pic.onlinewebfonts.com/thumbnails/animations_498808.svg?width=2"
+            width="50px"
+            class=""
+            alt=""
+          />
+          <h5>Luggage storage</h5>
+        </div>
+        <p class="">
+          Your luggage will be stored in a locked, secure area monitored by
+          staff to ensure your belongings are safe while you explore the city or
+          enjoy your time between check-in and check-out..
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card border-0 p-4">
+        <div class="d-flex align-items-center gap-4">
+          <img
+            src="https://www.svgrepo.com/show/103095/parking-sign.svg"
+            width="50px"
+            alt=""
+          />
+          <h5>Parking space</h5>
+        </div>
+        <p class="mt-3">
+          Spacious and secure parking available, ensuring a hassle-free visit..
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="my-5">
+  <div class="row">
+    <div class="col-md-6 w-50">
+      <img
+        src="{% static 'images/img11.jpg' %}"
+        class="w-100 rounded-3 card shadow-sm"
+        alt=""
+      />
+    </div>
+
+    <div class="col-md-6">
+      <small>World-Class Facilities</small>
+      <h2>Luxury Redefined at Sky Hotel</h2>
+      <p>
+        Immerse yourself in a world of indulgence at Sky Hotel, where every
+        activity is designed to elevate your experience. Each moment at Sky
+        Hotel is crafted for your ultimate enjoyment.
+      </p>
+
+      <h2 class="mt-4 text-center text-blue pt-3">Hotel Nayandeep</h2>
+      <div class="w-100 d-flex justify-content-center">
+        <img src="{% static 'images/logo1.png' %}" width="100px" alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="my-5">
+  <div class="row py-4 row-bg">
+    <div class="col-md-6">
+      <small>Book Your Stay</small>
+      <h2 class="text-black">
+        Your perfect escape, immersed in refined luxury.
+      </h2>
+      <p>
+        We guarantee you’ll find the best deals right here on our website. So
+        BOOK DIRECT and receive these added benefits at no extra cost:
+      </p>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-end my-3">
+      <form action="" class="card py-3 px-3">
+        <h2>Why book direct?</h2>
+        <h6>Best price</h6>
+        <p>Book direct and enjoy the lowest rates available!</p>
+        <h6>Exclusive offers</h6>
+        <p>Book direct and enjoy exclusive offers</p>
+        <h6>No hidden fees</h6>
+        <p>Many websites charge extra fees for bookings. We do not.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="my-5 p-3 border-0">
+  <div class="row mt-5">
+    <div class="col-md-6 mt-3 ">
+      <form
+        id="contact-form"
+        action=""
+        class="bg-white rounded-3 border-0 py-4 p-3 w-75 card card-bg"
+      >
+        <h1 class="fonts mb-4">Contact Us</h1>
+
+        <div class="mb-2">
+          <label for="" class="label-form">Name</label>
+          <input type="text" id="name" name="name" class="form-control" />
+        </div>
+        <div class="mb-2">
+          <label for="" class="label-form">Mobile</label>
+          <input type="text" id="mobile" name="mobile" class="form-control" />
+        </div>
+        <div class="mb-2">
+          <label for="" class="label-form">Date</label>
+          <input type="date" id="date" name="date" class="form-control" />
+        </div>
+        <div class="mb-2">
+          <label for="" class="label-form">Message</label>
+          <input type="text" id="message" name="message" class="form-control" />
+        </div>
+        <button
+          href=""
+          type="submit"
+          id="submitBtn"
+          class="btn btn-primary mt-4 mb-2"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+
+    <div class="col-md-6 mt-3">
+      <h2>Hotel NayanDeep</h2>
+      <small>“Stay memorable, stay at Hotel Nayandeep.”</small>
+      <p class="mt-3">
+        At Hotel Nayandeep, we believe that great hospitality begins with warm
+        communication. Whether you are planning your next holiday, a business
+        trip, or a family event, our team is always here to guide you with the
+        right information and assistance. We understand that every guest has
+        unique needs, and we strive to provide quick, clear, and friendly
+        support at every step — from inquiries about room availability and
+        dining options to event bookings and special arrangements. Getting in
+        touch with us is simple and convenient. You can call us directly for
+        instant assistance, drop us an email for detailed queries, or simply
+        fill out the contact form on our website — our team ensures a prompt
+        response every time. We also welcome walk-in guests who would like to
+        experience our warm hospitality firsthand.
+      </p>
+      <p>
+        At Hotel Nayandeep, your comfort, satisfaction, and peace of mind are
+        our top priorities. No matter the question or request, we are just a
+        message away, ready to make your experience with us smooth, enjoyable,
+        and memorable.
+      </p>
+      <a
+        href="{% url 'contact' %}"
+        class="btn bg-blue text-light py-2 px-5 mt-3"
+        >Contact Us</a
+      >
+    </div>
+  </div>
+</section>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="{% static 'js/jquery.js' %}"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    //
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+
+    breakpoints: {
+      576: {
+        // tablet
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      992: {
+        // desktop
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+  });
+</script>
+
+<script>
+  const form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const mobile = document.getElementById("mobile").value;
+    const date = document.getElementById("date").value;
+    const message = document.getElementById("message").value;
+
+    window.open(
+      `https://wa.me/79919994599?text=Name:%20${encodeURIComponent(
+        name
+      )}%0AMobile:%20${encodeURIComponent(
+        mobile
+      )}%0ADate:%20${encodeURIComponent(
+        date
+      )}%0AMessage:%20${encodeURIComponent(message)}`,
+      "_blank"
+    );
+  });
+</script>
+{% endblock content %}

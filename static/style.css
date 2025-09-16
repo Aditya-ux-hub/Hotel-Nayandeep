@@ -1,0 +1,134 @@
+/* Hero Section with Swiper */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+.hero {
+  /* background: url("images/img11.jpg") center/cover no-repeat; */
+  height: 80vh;
+  position: relative;
+  color: white;
+}
+.navbar {
+  position: absolute;
+  top: 0;
+  z-index: 999;
+}
+body {
+  background-color: #fffaf5;
+}
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.navbar-transparent {
+  /* border: white !important; */
+
+  border: 2px solid white;
+}
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.swiper {
+  height: 100vh;
+  width: 100%;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* background: #444; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.brd-1 {
+  border-right: 2px solid rgb(104, 101, 101) !important;
+}
+
+.row-bg {
+  background-image: url("images/img8.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 400px;
+}
+.row-bg2 {
+  /* background-image: url("images/img15.jpeg"); */
+  background-color: rgb(247, 215, 175);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
+}
+
+.text-gold {
+  color: #be873a;
+}
+small {
+  color: #09205c;
+  /* font-weight: bold; */
+}
+
+.bg-gold {
+  background-color: #be873a;
+}
+.bg-blue {
+  background-color: #09205c;
+}
+.text-blue {
+  color: #09205c;
+}
+
+.fonts {
+  font-family: "Playfair Display", serif;
+}
+h2 {
+  font-family: "Playfair Display", serif;
+  color: #be873a;
+  font-size: 40px;
+}
+p {
+  color: #444;
+  letter-spacing: 0.8px;
+  font-size: 14px;
+}
+footer {
+  p {
+    color: #fffaf5;
+  }
+}
+.btn:hover {
+  background-color: #2151cd !important;
+}
+.card {
+  transition: all 0.3s ease;
+}
+.card-bg {
+  background-color: #e6e6e7 !important;
+}
+.card:hover {
+  transform: translateY(-8px);
+}

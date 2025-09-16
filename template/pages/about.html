@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+{% block hero_bg %}{% static "images/img13.jpg" %}{% endblock hero_bg %}
+{% block hero_title %}About Nayandeep Hotel{% endblock hero_title %}
+{% block hero_subtitle %}Learn about our journey, our values, and our commitment to luxury hospitality.{% endblock hero_subtitle %}
+{% block hero_btn_url %}{% url "room" %}{% endblock hero_btn_url %}
+{% block hero_btn_text %}Book a Room{% endblock hero_btn_text %}
+
+
+{% block content %}
+    
+<section class="about my-5">
+  <div class="row my-5 py-5">
+    <div class="col-md-6 my-3">
+      <div class="content">
+        <h2>About Us</h2>
+        <small
+          >“Hotel Nayandeep – Comfort and elegance at one place.”
+        </small>
+        <p>
+          Hotel Nayandeep is more than just a place to stay; it is a destination
+          where comfort, hospitality, and convenience come together to create
+          unforgettable experiences. Nestled in a prime location, the hotel is
+          thoughtfully designed to cater to the needs of modern travelers while
+          retaining a warm and welcoming charm. From business executives and
+          families to tourists seeking relaxation, every guest at Hotel
+          Nayandeep is treated with personalized attention and care.
+        </p>
+        <p>
+          What truly sets Hotel Nayandeep apart is our commitment to service.
+          Our staff is dedicated to making your visit seamless and enjoyable,
+          ready to assist you at every step with warmth and professionalism. We
+          believe that hospitality is not just about providing a room, but about
+          creating an atmosphere where every guest feels valued, respected, and
+          cared for.
+        </p>
+
+        <a href="{% url 'contact' %}" class="btn bg-blue py-3 text-light  mt-4">Contact Us</a>
+      </div>
+    </div>
+
+    <div class="col-md-6 my-3">
+      <div class="card">
+        <img
+          src="{% static 'images/hotel.jpg' %}"
+          class="w-100 rounded-3"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}
+    

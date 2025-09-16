@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sky Hotel — Luxury Redefined</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark fixed-top navbar-transparent"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">NayanDeep</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="{% url 'room' %}">Rooms</a>
+            </li>
+            <!-- <li class="nav-item"><a class="nav-link text-light" href="#">Services</a></li> -->
+            <li class="nav-item">
+              <a class="nav-link text-light" href="{% url 'dining' %}">Dining</a>
+            </li>
+            <!-- <li class="nav-item"><a class="nav-link text-light" href="#">Events</a></li> -->
+            <li class="nav-item">
+              <a class="nav-link text-light" href="{% url 'contact' %}"
+                >Contact</a
+              >
+            </li>
+            <li class="nav-item ms-3">
+              <a href="{% url 'room' %}" class="btn bg-blue text-light px-4 py-2">Book Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+   
+  <header class="hero" 
+    style="background: url('{% block hero_bg %}{% static "images/img11.jpg" %}{% endblock hero_bg %}') 
+           center/cover no-repeat; height: 80vh; position: relative; color: white;">
+    <div class="hero-overlay px-3">
+      <div>
+        <h2 class="display-4 fw-bold text-light">
+          {% block hero_title %}Experience 4-Star Luxury{% endblock hero_title %}
+        </h2>
+        <p class="lead mb-4 text-light">
+          {% block hero_subtitle %}Welcome to Nayandeep Hotel — where elegance meets comfort.{% endblock hero_subtitle %}
+        </p>
+        <a href="{% block hero_btn_url %}#{% endblock hero_btn_url %}" class="btn text-white bg-blue btn-lg">
+          {% block hero_btn_text %}Reserved Your Stay{% endblock hero_btn_text %}
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+    <!-- Main Content Placeholder -->
+    <main class="container my-5">
+      {% block content %} {% endblock content %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue text-light pt-5 pb-3">
+      <div class="container">
+        <div class="row">
+          <!-- Logo & About -->
+          <div class="col-md-3 mb-4">
+            <h5 class="fw-bold">Nayandeep Hotel</h5>
+            <p>
+              4-star elegance in Gida sector-22, Gorakhpur luxurious rooms, exquisite
+              dining, and unforgettable moments.
+            </p>
+          </div>
+          <!-- Quick Links -->
+          <div class="col-md-3 mb-4">
+            <h5 class="fw-bold">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-light nav-link">Home</a></li>
+              <li>
+                <a href="{% url 'about' %}" class="text-light nav-link"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="{% url 'room' %}" class="text-light nav-link">Rooms</a>
+              </li>
+              <!-- <li><a href="#" class="text-light nav-link">Services</a></li> -->
+              <li><a href="{% url 'dining' %}" class="text-light nav-link">Dining</a></li>
+              <!-- <li><a href="#" class="text-light nav-link">Events</a></li> -->
+              <li>
+                <a href="{% url 'contact' %}" class="text-light nav-link"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Contact Info -->
+          <div class="col-md-3 mb-4">
+            <h5 class="fw-bold">Contact Us</h5>
+            <p><i class="bi bi-telephone-fill"></i> 79919994599</p>
+            <p>
+              <i class="bi bi-envelope-fill"></i>
+              hotelnayandeepresturant@gmail.com
+            </p>
+            <p>
+              <i class="bi bi-geo-alt-fill"></i> B6/2-sector 22, Gida Behind
+              Indian Oil Petrol Pump Sahjanwa, Gorakhpur, UP, 273209
+            </p>
+          </div>
+          <!-- Social Media -->
+          <div class="col-md-3 mb-4 ">
+            <h5 class="fw-bold">Follow Us</h5>
+            <a href="#" class="text-light fs-4 me-3"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="#" class="text-light fs-4 me-3"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="#" class="text-light fs-4 me-3"
+              ><i class="bi bi-whatsapp"></i
+            ></a>
+            <a href="#" class="text-light fs-4"
+              ><i class="bi bi-youtube"></i
+            ></a>
+          </div>
+        </div>
+        <hr class="border-light" />
+        <div class="text-center">
+          <p class="mb-0">&copy; 2025 Nayandeep Hotel. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
