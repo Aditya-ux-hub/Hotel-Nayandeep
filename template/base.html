@@ -65,7 +65,9 @@
             </li>
             <!-- <li class="nav-item"><a class="nav-link text-light" href="#">Services</a></li> -->
             <li class="nav-item">
-              <a class="nav-link text-light" href="{% url 'dining' %}">Dining</a>
+              <a class="nav-link text-light" href="{% url 'dining' %}"
+                >Dining</a
+              >
             </li>
             <!-- <li class="nav-item"><a class="nav-link text-light" href="#">Events</a></li> -->
             <li class="nav-item">
@@ -74,7 +76,11 @@
               >
             </li>
             <li class="nav-item ms-3">
-              <a href="{% url 'room' %}" class="btn bg-blue text-light px-4 py-2">Book Now</a>
+              <a
+                href="{% url 'room' %}"
+                class="btn bg-blue text-light px-4 py-2"
+                >Book Now</a
+              >
             </li>
           </ul>
         </div>
@@ -82,25 +88,27 @@
     </nav>
 
     <!-- Hero Section -->
-   
-  <header class="hero" 
-    style="background: url('{% block hero_bg %}{% static "images/img11.jpg" %}{% endblock hero_bg %}') 
-           center/cover no-repeat; height: 80vh; position: relative; color: white;">
-    <div class="hero-overlay px-3">
-      <div>
-        <h2 class="display-4 fw-bold text-light">
-          {% block hero_title %}Experience 4-Star Luxury{% endblock hero_title %}
-        </h2>
-        <p class="lead mb-4 text-light">
-          {% block hero_subtitle %}Welcome to Nayandeep Hotel — where elegance meets comfort.{% endblock hero_subtitle %}
-        </p>
-        <a href="{% block hero_btn_url %}#{% endblock hero_btn_url %}" class="btn text-white bg-blue btn-lg">
-          {% block hero_btn_text %}Reserved Your Stay{% endblock hero_btn_text %}
-        </a>
-      </div>
-    </div>
-  </header>
 
+    <header class="hero"   style="background: url('{% block hero_bg %}{% static "images/img11.jpg" %}{% endblock hero_bg %}') 
+           center/cover no-repeat; height: 80vh; position: relative; color: white;">
+      <div class="hero-overlay px-3">
+        <div>
+          <h2 class="display-4 fw-bold text-light">
+            {% block hero_title %}Experience 4-Star Luxury{% endblock hero_title %}
+          </h2>
+          <p class="lead mb-4 text-light">
+            {% block hero_subtitle %}Welcome to Nayandeep Hotel — where elegance
+            meets comfort.{% endblock hero_subtitle %}
+          </p>
+          <a
+            href="{% block hero_btn_url %}{% url 'room' %}{% endblock hero_btn_url %}"
+            class="btn text-white bg-blue btn-lg"
+          >
+            {% block hero_btn_text %}Reserved Your Stay{% endblock hero_btn_text %}
+          </a>
+        </div>
+      </div>
+    </header>
 
     <!-- Main Content Placeholder -->
     <main class="container my-5">
@@ -115,8 +123,8 @@
           <div class="col-md-3 mb-4">
             <h5 class="fw-bold">Nayandeep Hotel</h5>
             <p>
-              4-star elegance in Gida sector-22, Gorakhpur luxurious rooms, exquisite
-              dining, and unforgettable moments.
+              4-star elegance in Gida sector-22, Gorakhpur luxurious rooms,
+              exquisite dining, and unforgettable moments.
             </p>
           </div>
           <!-- Quick Links -->
@@ -133,7 +141,11 @@
                 <a href="{% url 'room' %}" class="text-light nav-link">Rooms</a>
               </li>
               <!-- <li><a href="#" class="text-light nav-link">Services</a></li> -->
-              <li><a href="{% url 'dining' %}" class="text-light nav-link">Dining</a></li>
+              <li>
+                <a href="{% url 'dining' %}" class="text-light nav-link"
+                  >Dining</a
+                >
+              </li>
               <!-- <li><a href="#" class="text-light nav-link">Events</a></li> -->
               <li>
                 <a href="{% url 'contact' %}" class="text-light nav-link"
@@ -156,7 +168,7 @@
             </p>
           </div>
           <!-- Social Media -->
-          <div class="col-md-3 mb-4 ">
+          <div class="col-md-3 mb-4">
             <h5 class="fw-bold">Follow Us</h5>
             <a href="#" class="text-light fs-4 me-3"
               ><i class="bi bi-facebook"></i
